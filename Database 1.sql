@@ -19,9 +19,23 @@ values(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus');
 insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
 values(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus');
 
+update store set cus_adress = 'Kristiansand' where cus_ID = 3;
+
+delete from store where cus_fname = 'Preben';
+
+insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
+values(1, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur');
+
+insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
+values(4, 'Mikael', 'Kimerud', 'Bamble', 'mikael@mail', 114, 'Mikime');
+
+insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
+values(5, 'Kaula', 'Smith', 'Texas', 'kaula@mail', 115, 'kausmi');
 
 
+Select cus_fname, cus_mail from store;
 
+select * from store where cus_fname like '%Kau%';
 
-select * from store; 
+select * from store;
  
