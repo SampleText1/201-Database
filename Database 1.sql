@@ -13,6 +13,15 @@ cus_username varchar(30)
 insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
 values(1, 'Preben', 'Tjemsland', 'homseby', 'preben@mail', 113, 'Kripsus');
 
+insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
+values(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus');
+
+insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username)
+values(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus');
+
+
+
+
 
 select * from store; 
  
