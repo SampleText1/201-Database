@@ -1,14 +1,14 @@
 use test;
-create table store (
-cus_ID integer not null,
-primary key(cus_ID),
-cus_fname varchar (20),
-cus_lname varchar(20) default 'Smith',
-cus_adress varchar(30),
-cus_mail varchar(30),
-cus_phone integer,
-cus_username varchar(30),
-cus_payment varchar(30)
+CREATE TABLE store (
+    cus_ID INTEGER NOT NULL,
+    PRIMARY KEY (cus_ID),
+    cus_fname VARCHAR(20),
+    cus_lname VARCHAR(20) DEFAULT 'Smith',
+    cus_adress VARCHAR(30),
+    cus_mail VARCHAR(30),
+    cus_phone INTEGER,
+    cus_username VARCHAR(30),
+    cus_payment VARCHAR(30)
 );
 
 insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username,cus_payment)
@@ -20,9 +20,15 @@ values(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus', 
 insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus', 'Visa');
 
-update store set cus_adress = 'Kristiansand' where cus_ID = 3;
+UPDATE store 
+SET 
+    cus_adress = 'Kristiansand'
+WHERE
+    cus_ID = 3;
 
-delete from store where cus_fname = 'Preben';
+DELETE FROM store 
+WHERE
+    cus_fname = 'Preben';
 
 insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(1, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur', 'Visa');
@@ -34,9 +40,21 @@ insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone,
 values(5, 'Kaula', 'Smith', 'Texas', 'kaula@mail', 115, 'kausmi', 'Bitcoins');
 
 
-Select cus_fname, cus_mail from store;
+SELECT 
+    cus_fname, cus_mail
+FROM
+    store;
 
-select * from store where cus_fname like '%Kau%';
+SELECT 
+    *
+FROM
+    store
+WHERE
+    cus_fname LIKE '%Kau%';
 
-select * from store;
- 
+SELECT 
+    *
+FROM
+    store;
+
+describe store; 
