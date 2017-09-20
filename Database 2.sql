@@ -36,6 +36,6 @@ SELECT
 FROM
     orders;
 
-drop table orders;
-
-DELETE
+DELETE FROM
+    orders
+WHERE cus_ID = ord_cusID;

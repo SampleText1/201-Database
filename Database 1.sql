@@ -57,4 +57,22 @@ SELECT
 FROM
     store;
 
-describe store; 
+describe store;
+
+DELETE FROM store 
+WHERE
+    cus_ID = 5;
+    
+SELECT 
+    cus_fname, ord_date, ord_status
+FROM
+    store,
+    orders
+WHERE
+    cus_ID = ord_cusID;
+    
+SELECT 
+    cus_fname, ord_date, ord_status
+FROM
+    store,
+    orders;
