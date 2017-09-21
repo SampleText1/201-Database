@@ -1,5 +1,5 @@
 use test;
-CREATE TABLE store (
+CREATE TABLE customer (
     cus_ID INTEGER NOT NULL,
     PRIMARY KEY (cus_ID),
     cus_fname VARCHAR(20),
@@ -11,62 +11,62 @@ CREATE TABLE store (
     cus_payment VARCHAR(30)
 );
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username,cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username,cus_payment)
 values(1, 'Preben', 'Tjemsland', 'homseby', 'preben@mail', 113, 'Kripsus', 'Bitcoins');
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus', 'Mastercard');
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus', 'Visa');
 
-UPDATE store 
+UPDATE customer 
 SET 
     cus_adress = 'Kristiansand'
 WHERE
     cus_ID = 3;
 
-DELETE FROM store 
+DELETE FROM customer 
 WHERE
     cus_fname = 'Preben';
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(1, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur', 'Visa');
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(4, 'Mikael', 'Kimerud', 'Bamble', 'mikael@mail', 114, 'Mikime', 'Visa Debit');
 
-insert into store(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
+insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
 values(5, 'Kaula', 'Smith', 'Texas', 'kaula@mail', 115, 'kausmi', 'Bitcoins');
 
 
 SELECT 
     cus_fname, cus_mail
 FROM
-    store;
+    customer;
 
 SELECT 
     *
 FROM
-    store
+    customer
 WHERE
     cus_fname LIKE '%Kau%';
 
 SELECT 
     *
 FROM
-    store;
+    customer;
 
-describe store;
+describe customer;
 
-DELETE FROM store 
+DELETE FROM customer 
 WHERE
     cus_ID = 5;
     
 SELECT 
     cus_fname, ord_date, ord_status
 FROM
-    store,
+    customer,
     orders
 WHERE
     cus_ID = ord_cusID;
@@ -74,5 +74,5 @@ WHERE
 SELECT 
     cus_fname, ord_date, ord_status
 FROM
-    store,
+    customer,
     orders;
