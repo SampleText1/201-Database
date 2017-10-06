@@ -12,13 +12,9 @@ CREATE TABLE customer (
 );
 
 insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username,cus_payment)
-values(1, 'Preben', 'Tjemsland', 'homseby', 'preben@mail', 113, 'Kripsus', 'Bitcoins');
-
-insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
-values(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus', 'Mastercard');
-
-insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
-values(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus', 'Visa');
+values(1, 'Preben', 'Tjemsland', 'Stavanger', 'preben@mail', 113, 'Kripsus', 'Bitcoins'),
+(2, 'Jørgen', 'Kongsberg', 'Fredrikstad', 'jørgen@mail', 110, 'Ripsus', 'Mastercard'),
+(3, 'Marius', 'Kaurin', 'Moss', 'marius@mail', 111, 'Krektus', 'Visa');
 
 UPDATE customer 
 SET 
@@ -31,13 +27,15 @@ WHERE
     cus_fname = 'Preben';
 
 insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
-values(1, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur', 'Visa');
+values(1, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur', 'Visa'),
+(4, 'Mikael', 'Kimerud', 'Bamble', 'mikael@mail', 114, 'Mikime', 'Visa Debit'),
+(5, 'Kaula', 'Smith', 'Texas', 'kaula@mail', 115, 'kausmi', 'Bitcoins'),
+(6, 'Per', 'Olsen', 'Hamar', 'Per@mail', 116, 'Perol', 'Visa Debit'),
+(7, 'George', 'Clooney', 'Lexington', 'George@mail', 117, 'Geoclo', 'American Express'),
+(8, 'Donald', 'Trump', 'New York', 'Donald@mail', 118, 'Dontru', 'Mastercard'),
+(9, 'Charlotte', 'Aubert', 'Paris', 'Charlotte@mail', 119, 'Chaube', 'Visa'),
+(10, 'Fred', 'Flintstone', 'Bedrock', 'Fred@mail', 120, 'Freflin', 'Shiny rocks');
 
-insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
-values(4, 'Mikael', 'Kimerud', 'Bamble', 'mikael@mail', 114, 'Mikime', 'Visa Debit');
-
-insert into customer(cus_ID, cus_fname, cus_lname, cus_adress, cus_mail, cus_phone, cus_username, cus_payment)
-values(5, 'Kaula', 'Smith', 'Texas', 'kaula@mail', 115, 'kausmi', 'Bitcoins');
 
 
 SELECT 
