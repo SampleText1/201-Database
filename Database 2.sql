@@ -13,19 +13,19 @@ CREATE TABLE orders (
 );
 
 insert into orders(ord_num, ord_date, ord_cusID, ord_proID, ord_status)
-values(1,"22.09.92", 3, 002, "Sendt"),
-(2, "24.09.92", 5, 001, "Sendt"),
-(3, "25.09.92", 4, 003, "Sendt"),
-(4, "26.09.92", 1, 003, "Sendt"),
-(5, "27.09.92", 2, 003, "Sendt"),
-(6, "28.09.92", 6, 003, "Behandlet"),
-(7, "29.09.92", 7, 003, "Behandlet"),
-(8, "30.09.92", 8, 003, "Behandlet"),
-(9, "01.10.92", 9, 003, "Behandlet"),
-(10, "02.10.92",10, 003, "Mottat"),
-(11, "03.10.92", 1, 003, "Mottat"),
-(12, "04.10.92", 5, 003, "Mottatt"),
-(13, "04.10.92", 7, 003, "Mottat");
+values(1,"22.09.92", 3, 222, "Sendt"),
+(2, "24.09.92", 5, 111, "Sendt"),
+(3, "25.09.92", 4, 333, "Sendt"),
+(4, "26.09.92", 1, 444, "Sendt"),
+(5, "27.09.92", 2, 333, "Sendt"),
+(6, "28.09.92", 6, 666, "Behandlet"),
+(7, "29.09.92", 7, 999, "Behandlet"),
+(8, "30.09.92", 8, 333, "Behandlet"),
+(9, "01.10.92", 9, 555, "Behandlet"),
+(10, "02.10.92",10, 777, "Mottat"),
+(11, "03.10.92", 1, 888, "Mottat"),
+(12, "04.10.92", 5, 222, "Mottatt"),
+(13, "04.10.92", 7, 111, "Mottat");
 
 SELECT 
     LEFT(ord_name, 5)
@@ -94,11 +94,15 @@ WHERE
     ord_num = 003;
 
 SELECT 
-    cus_fname, cus_lname, ord_quantity, pro_name
+    cus_fname, cus_lname, pro_quantity, pro_name, ord_status
 FROM
     customer
         INNER JOIN
     orders ON cus_ID = ord_cusID
         INNER JOIN
     products ON pro_id = ord_proid;
+    
+    drop table orders;
+    
+    
 
