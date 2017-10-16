@@ -12,7 +12,7 @@ insert into products (pro_name, pro_price, pro_quantity, pro_ID, pro_reorder)
 values ("Grafikkort", 2999, 20, 111, 5),
 ("Hovedkort", 1999, 20, 222, 5),
 ("Star Wars", 199, 30, 333, 5),
-("Starcraft II", 499, 50, 444, 5),
+("Minnepenn", 499, 50, 444, 5),
 ("Datamus", 599, 20, 555, 5),
 ("Tastatur", 899, 10, 666, 5),
 ("Skjerm", 1199, 40, 777, 5),
@@ -35,5 +35,5 @@ WHERE
 alter table products
 add pro_reorder integer;
 
-/**drop table products;**/
+drop table products;
 
