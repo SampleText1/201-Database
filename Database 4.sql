@@ -5,7 +5,9 @@ inv_dateiss varchar(30),
 inv_datepay varchar (30),
 inv_creditnr integer,
 inv_holdname varchar(30),
-inv_expdate varchar(30)
+inv_expdate varchar(30),
+inv_ordnum integer
+
 );
 
 insert into invoice(inv_num, inv_dateiss, inv_datepay, inv_creditnr, inv_holdname, inv_expdate)

@@ -4,10 +4,12 @@ CREATE TABLE orders (
     PRIMARY KEY (ord_num ),
     FOREIGN KEY (ord_cusID)
         REFERENCES customer (cus_ID),
-        
+	constraint invnum foreign key (ord_invnum)
+    references invoice (inv_num),
     ord_date VARCHAR(20),
     ord_cusID INTEGER NOT NULL,
-    ord_status VARCHAR(30)
+    ord_status VARCHAR(30),
+    ord_invnum integer
     
 );
 
@@ -38,34 +40,37 @@ WHERE
         AND ord_date LIKE '%08.15%'
         AND ord_name LIKE '%gra%';
 SELECT 
-    cus_fname, cus_lname, ordc_quantity, pro_name
+    cus_fname, ord_num, (pro_price*ordc_quantity) as Sum
 FROM
-    customer,
-    orders,
-    products,
-    orderContent
-WHERE
-    cus_ID = ord_cusID
-        AND pro_ID = ordc_proID;
+    customer
+INNER JOIN orders on customer.cus_ID = orders.ord_cusID
+INNER JOIN orderContent on orders.ord_num = orderContent.ordc_num
+INNER JOIN products on orderContent.ordc_proID = products.pro_ID;
 
+
+describe products
+
+
+
+describe customer
+select * from orderContent
         
         
-        SELECT 
-    cus_fname, ord_num, (pro_price*ord_quantity) as Sum
+CREATE VIEW sale as select cus_fname, ord_num, (ordc_quantity*pro_price) as totalAmount 
 FROM
-    customer,
-    orders,
-    products
-WHERE
-    cus_ID = ord_cusID
-        AND pro_ID = ord_proID;
+    customer
+INNER JOIN orders on customer.cus_ID = orders.ord_cusID
+INNER JOIN orderContent on orders.ord_num = orderContent.ordc_num
+INNER JOIN products on orderContent.ordc_proID = products.pro_ID;
+
+
        
         
 
 SELECT 
     *
 FROM
-    orders;
+    sale;
 
 DELETE FROM orders 
 WHERE
