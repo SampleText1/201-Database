@@ -24,6 +24,10 @@ values(1, 'Preben', 'Tjemsland', 'Stavanger', 'preben@mail', 113, 'Kripsus'),
 (10, 'Fred', 'Flintstone', 'Bedrock', 'Fred@mail', 120, 'Freflin'),
 (11, 'Abdi', 'Gureye', 'Rud', 'Abdi@mail', 112, 'Abdigur');
 
+update customer
+set cus_phone = 200 where cus_fname = 'Marius';
+commit;
+
 
 
 SELECT 

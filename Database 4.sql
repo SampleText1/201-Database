@@ -21,3 +21,16 @@ values(1, "10.10.2017", "11.10.2017", 102030, "James Bond", "20.10.2017"),
 select * from invoice;
 
 drop table invoice;
+
+
+SELECT 
+    cus_fname, ord_num, (pro_price*ordc_quantity) as Sum
+FROM
+    customer
+INNER JOIN orders on customer.cus_ID = orders.ord_cusID
+INNER JOIN orderContent on orders.ord_num = orderContent.ordc_num
+INNER JOIN products on orderContent.ordc_proID = products.pro_ID;
+
+
+
+
